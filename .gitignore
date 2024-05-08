@@ -1,0 +1,10 @@
+MAG/*
+!MAG/.gitignore
+data_short_read_40
+!data_short_read_40/.gitignore
+data_short_read
+!data_short_read/.gitignore
+data
+!data/.gitignore
+PATRIC
+!PATRIC/.gitignore

@@ -1,0 +1,3 @@
+sequence_id,prediction_value,label
+seq_1,0.43,non-pathogenic
+seq_2,0.46,non-pathogenic

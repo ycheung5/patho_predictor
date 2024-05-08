@@ -1,0 +1,3 @@
+pandas==1.3.4
+biopython==1.79
+joblib==1.1.0
