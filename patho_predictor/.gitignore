@@ -1,0 +1,7 @@
+encoded_data
+!encoded_data/.gitignore
+iFeature_test
+SR_models
+!SR_models/.gitignore
+WGS_models
+!WGS_models/.gitignore

@@ -1,0 +1,62 @@
+Processing k-mer length: 3
+  0%|          | 0/26121 [00:00<?, ?it/s]  0%|          | 128/26121 [00:01<06:13, 69.65it/s]  1%|          | 135/26121 [00:01<06:25, 67.49it/s]  1%|          | 256/26121 [00:11<23:23, 18.43it/s]exception calling callback for <Future at 0x2aaace3cf4a8 state=finished raised BrokenProcessPool>
+joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/externals/loky/process_executor.py", line 407, in _process_worker
+  File "/usr/lib64/python3.6/multiprocessing/queues.py", line 113, in get
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/externals/cloudpickle/cloudpickle.py", line 679, in subimport
+  File "/home/tzutang/.local/lib/python3.6/site-packages/Bio/SeqIO/__init__.py", line 384, in <module>
+  File "/home/tzutang/.local/lib/python3.6/site-packages/Bio/SeqIO/PhdIO.py", line 54, in <module>
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 780, in get_code
+  File "<frozen importlib._bootstrap_external>", line 832, in get_data
+OSError: [Errno 23] Too many open files in system: '/home/tzutang/.local/lib/python3.6/site-packages/Bio/SeqIO/QualityIO.py'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/externals/loky/_base.py", line 625, in _invoke_callbacks
+    callback(self)
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/parallel.py", line 360, in __call__
+    self.parallel.dispatch_next()
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/parallel.py", line 797, in dispatch_next
+    if not self.dispatch_one_batch(self._original_iterator):
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/parallel.py", line 864, in dispatch_one_batch
+    self._dispatch(tasks)
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/parallel.py", line 782, in _dispatch
+    job = self._backend.apply_async(batch, callback=cb)
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/_parallel_backends.py", line 531, in apply_async
+    future = self._workers.submit(SafeFunction(func))
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/externals/loky/reusable_executor.py", line 178, in submit
+    fn, *args, **kwargs)
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/externals/loky/process_executor.py", line 1115, in submit
+    raise self._flags.broken
+joblib.externals.loky.process_executor.BrokenProcessPool: A task has failed to un-serialize. Please ensure that the arguments of the function are all picklable.
+  1%|▏         | 384/26121 [00:11<12:05, 35.46it/s]pgrep: error while loading shared libraries: libc.so.6: cannot open shared object file: Error 23
+Exception in thread ExecutorManagerThread:
+Traceback (most recent call last):
+  File "/usr/lib64/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/externals/loky/process_executor.py", line 566, in run
+    self.terminate_broken(bpe)
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/externals/loky/process_executor.py", line 750, in terminate_broken
+    self.kill_workers(reason="broken executor")
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/externals/loky/process_executor.py", line 781, in kill_workers
+    recursive_terminate(p)
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/externals/loky/backend/utils.py", line 28, in recursive_terminate
+    _recursive_terminate_without_psutil(process)
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/externals/loky/backend/utils.py", line 53, in _recursive_terminate_without_psutil
+    _recursive_terminate(process.pid)
+  File "/home/tzutang/.local/lib/python3.6/site-packages/joblib/externals/loky/backend/utils.py", line 94, in _recursive_terminate
+    stderr=None
+  File "/usr/lib64/python3.6/subprocess.py", line 356, in check_output
+    **kwargs).stdout
+  File "/usr/lib64/python3.6/subprocess.py", line 438, in run
+    output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['pgrep', '-P', '166713']' returned non-zero exit status 127.
+
