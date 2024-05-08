@@ -51,3 +51,5 @@ Run the script with the following command:
 ```bash
 python patho_predict.py --model_path "demo/random_forest.joblib" --input_fasta "demo/demo.fna" --output_csv "result_demo.csv"
 ```
+
+testing
