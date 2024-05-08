@@ -43,7 +43,7 @@ The output CSV file will contain three columns:
 sequence_id: The ID of the sequence from the FASTA file.
 prediction_value: The probability of the sequence being pathogenic.
 label: A label indicating "pathogenic" if the probability is 0.5 or higher, and "non-pathogenic" otherwise.
-
+ 
 ## Demo
 
 Run the script with the following command:
