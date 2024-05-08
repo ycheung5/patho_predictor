@@ -3,7 +3,7 @@
 This tool predicts the pathogenicity of sequences read from a FASTA file using a pre-trained RandomForest model. The sequences are encoded into k-mer frequencies, and the model outputs the probability of each sequence being pathogenic.
 
 ## Features
-
+ 
 - Reads sequences from a FASTA file.
 - Encodes sequences into k-mer frequencies.
 - Uses a RandomForest model to predict pathogenicity.
